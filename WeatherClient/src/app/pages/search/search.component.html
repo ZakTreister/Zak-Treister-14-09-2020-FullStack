@@ -1,0 +1,16 @@
+<div class="row mb-4">
+    <div class="col-12">
+        <h1>Search cities</h1>
+        <form (ngSubmit)="searchCitiesByQuery()">
+            <div class="form-row justify-content-center">
+                <div class="col-6">
+                    <input type="text" class="form-control" id="searchCities" name="searchCities" [(ngModel)]="query">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<app-weather-by-city [cities]="cities"></app-weather-by-city>

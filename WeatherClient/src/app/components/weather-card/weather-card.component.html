@@ -1,0 +1,15 @@
+<div class="row" *ngIf="cityWeather">
+    <div class="col-6 text-center">
+        <h3>{{cityWeather?.localizedName}}</h3>
+        <h3>{{cityWeather?.temprature}} {{cityWeather?.weatherText}}</h3>
+    </div>
+    <div class="col-6">
+        <button class="btn btn-lg d-flex align-items-center" (click)="toggleFavorite()">
+            <i class="fas fa-heart text-danger" [ngClass]="{
+                'fas':cityWeather?.isFavorite,
+                'far':!cityWeather?.isFavorite
+            }"></i>
+            <p class="mb-0 ml-3">{{!cityWeather?.isFavorite ? 'Add to' : 'Remove from'}} favorites</p>
+        </button>
+    </div>
+</div>

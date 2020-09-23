@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col-md-6 col-lg-9">
+        <app-weather-card [cityWeather]="cityWeather" (favoriteToggled)="handleFavoriteToggled($event)">
+        </app-weather-card>
+    </div>
+    <div class="col-md-6 col-lg-3 border-left border-dark pb-4" *ngIf="cities && cities.length">
+        <button *ngFor="let city of cities" type="button" class="btn  btn-lg btn-block"
+            (click)="getCurrentWeather(city)">{{city.localizedName}}</button>
+    </div>
+</div>
